@@ -60,10 +60,10 @@ public class MainActivity extends AbstractBaseActivity {
     @OnClick(R.id.btnSendImage)
     void downloadImage() {
         Intent intent = new Intent(Intent.ACTION_SEND);
-        Uri image = Uri.parse("android.resource://res/drawable/" + R.drawable.desert);
+        Uri image = Uri.parse("android.resource://com.example.user.implicit_intent/drawable/" + R.drawable.desert);
         intent.setType("image/*");
         intent.putExtra(Intent.EXTRA_STREAM, image);
-        intent.putExtra(Intent.EXTRA_TEXT, "hey whatshup");
+        intent.putExtra(Intent.EXTRA_TEXT, "Sending The Image");
         Intent chooser = Intent.createChooser(intent, "Send Image");
         startActivity(chooser);
     }
